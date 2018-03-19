@@ -1,0 +1,21 @@
+Repo for some regression tasks, particularly comparing Gaussian Process treatment to a neural network model.
+
+Released under MIT Licence
+
+How to Run:
+
+1) install Anaconda https://anaconda.org/anaconda/python to get most of the packages you will need
+2) Then install Tensorflow as indicated on their website https://www.tensorflow.org/install/
+3) run the regression_gp.py script with
+       python regression_gp.py
+    This script will also generate the data used for the regression tasks
+4) run the regression_nn.py script with
+       python regression_nn.py
+
+5) Generate the plots to compare the regression tasks with
+   python plot_compare.py
+
+6) Do a dance :)
+
+
+Author: Ethan Goan
