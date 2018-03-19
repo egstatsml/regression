@@ -36,8 +36,8 @@ if __name__ == "__main__":
     plt.scatter(x.ravel(),y.ravel(),label='Training Samples')
     plt.legend()
     plt.ylim(ylim)
+    plt.savefig('gp.eps', format='eps')
     plt.show()
-    plt.savefig('gp.eps')
     plt.close()
 
 
@@ -54,8 +54,8 @@ if __name__ == "__main__":
     plt.scatter(x.ravel(),y.ravel(),label='Training Samples')
     plt.legend()
     plt.ylim(ylim)
+    plt.savefig('nn.eps', format='eps')
     plt.show()
-    plt.savefig('nn.eps')
     plt.close()
 
 
