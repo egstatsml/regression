@@ -16,9 +16,11 @@ Also generates the data to be used by other scripts
 import numpy as np
 import pandas as pd
 from scipy import signal
+import matplotlib
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
-
+import os
 
 def se_covariance(x1, x2, param):
     sqdist = np.sum(x1**2,1).reshape(-1,1) + np.sum(x2**2,1) - 2*np.dot(x1, x2.T)
@@ -55,7 +57,9 @@ if __name__ == "__main__":
     plt.figure()
     plt.plot(x_s, f_prior)
     plt.title('Samples generated from the prior')
-    plt.show()
+    if(os.environ.get('DISPLAY') != None):
+        plt.show()
+    plt.savefig('prior.png')
 
     #now want to condition the prior on the test inputs to generate
     #posterior distribution
@@ -80,7 +84,9 @@ if __name__ == "__main__":
                            color="#dddddd")
     plt.scatter(x,y)
     plt.title('Samples generated from the posterior')
-    plt.show()
+    if(os.environ.get('DISPLAY') != None):
+        plt.show()
+    plt.savefig('posterior.png')
 
 
     #save the data
