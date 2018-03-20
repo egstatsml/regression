@@ -1,4 +1,17 @@
 #!/usr/bin/env python
+"""
+regression_gp.py
+
+Author: Ethan Goan
+
+Modified from http://katbailey.github.io/post/gaussian-processes-for-dummies/
+and https://github.com/probml/pmtk3
+
+Description:
+Performs regression using a Gaussian Process framework
+
+Also generates the data to be used by other scripts
+"""
 
 import numpy as np
 import pandas as pd
@@ -20,6 +33,7 @@ def generate_data(n, n_s):
     y = np.sin(x) + (4.0/(25*np.pi**2)) * x**2 - 8/(5*np.pi)*x + 4
     y_test = np.sin(x_s) + (4.0/(25*np.pi**2)) * x_s**2 - 8/(5*np.pi)*x_s + 4
     return x, x_s, y, y_test
+
 
 if __name__ == "__main__":
     np.random.seed(10000)
